@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="navbar">  
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+  </view> 
+  <view hidden="{{currentTab!==list[currentTab]}}">  
+      <scroll-view class='scrollcontainer'>
+         <view class='scrollview' wx:for="{{listnews}}"  >
+           <view id="{{item.id}}" bindtap="details">
+                <block wx:if="{{index == 0}}">
+                  <view class='bignews'>
+                    <image src='{{item.image}}' ></image> 
+                      
+                    <text class='bigtext'>{{item.title}}</text>
+                    <text class='bigtext-source'>{{item.source}}   {{item.date}}</text>
+                    
+                  </view>
+                </block> 
+                <block wx:else>
+                  <view class='smallnews'>
+                   
+                    <view class='smalltext'>
+                    <text class='smalltext-title'>{{item.title}}</text>
+                    <text class='smalltext-source'>{{item.source}}   {{item.date}}</text>
+                    </view>    
+                     <image class='smallimage' src='{{item.image}}'mode='scaletoFill' ></image> 
+                  </view>
+                 </block>
+           </view>
+         </view>
+        
+      </scroll-view>
+</view>  
+ 
+
+</view>

@@ -1,0 +1,49 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom:100rpx;
+}
+
+.title{
+  font-size:52rpx;
+  color:#000;
+  padding:36rpx 60rpx 36rpx 30rpx;
+  letter-spacing:2rpx;
+  
+
+}
+.position{
+  display: flex;
+  justify-content: space-around;
+}
+.source{
+  font-size: 15px;
+  display: flex; 
+  align-items: left;
+  
+  color: gainsboro;
+}
+.image{
+  margin-top: 30px;
+  margin-bottom:20px;
+}
+.read{
+  display: flex;
+  font-size:15px;
+  color: gainsboro; 
+  
+}
+.content{
+  display: flex;
+  margin-left: 30rpx;
+  margin-right:30rpx;
+  font-size: 15px;
+}
+.textstrong{
+  font-weight: 800;
+  font-size: 25px;
+  margin-bottom: 10px;
+  
+}

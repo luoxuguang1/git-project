@@ -1,0 +1,18 @@
+<view class='container'>
+  <text class='title'>{{detailtitle}}</text>
+  <view class='position'>
+  <text class='source'>{{detailsource}} {{detaildate}} </text>
+  <text class='read'>阅读数量 {{detailreadcount}}</text>
+  </view>
+<view wx:for="{{detailcontent}}">
+        <view wx:if ="{{item.detailtype === 'p'}}">
+          <text class='content'> {{item.detailcontent}}</text>
+        </view>
+        <view wx:elif ="{{item.detailtype === 'image'}}">
+          <image src='{{item.detailcontent}}'class='image'></image>
+         </view>
+        <view wx:else ="{{item.detailtype ==='strong'}}">
+          <text class='textstrong'> {{item.detailcontent}}</text>
+        </view>
+</view>
+</view>
