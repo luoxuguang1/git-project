@@ -1,10 +1,13 @@
 <view class='container'>
   <text class='title'>{{detailtitle}}</text>
-  <view class='position'>
+    
+ 
+
+<view class ='detail-source'> 
   <text class='source'>{{detailsource}} {{detaildate}} </text>
   <text class='read'>阅读数量 {{detailreadcount}}</text>
-  </view>
-<view wx:for="{{detailcontent}}">
+</view>
+<view wx:for="{{detailcontent}}" wx:key='unique'>
         <view wx:if ="{{item.detailtype === 'p'}}">
           <text class='content'> {{item.detailcontent}}</text>
         </view>

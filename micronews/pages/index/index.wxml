@@ -5,7 +5,7 @@
   </view> 
   <view hidden="{{currentTab!==list[currentTab]}}">  
       <scroll-view class='scrollcontainer'>
-         <view class='scrollview' wx:for="{{listnews}}"  >
+         <view class='scrollview' wx:for="{{listnews}}" wx:key="unique" >
            <view id="{{item.id}}" bindtap="details">
                 <block wx:if="{{index == 0}}">
                   <view class='bignews'>
@@ -31,6 +31,4 @@
         
       </scroll-view>
 </view>  
- 
-
 </view>

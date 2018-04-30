@@ -40,11 +40,8 @@
    
 }
 
-.bignews{
-   
-   margin-top: 15px;
-   position: relative;
-   margin-bottom: 15px;
+.bignews{      
+   position: relative;   
 }
 
 .bigtext{

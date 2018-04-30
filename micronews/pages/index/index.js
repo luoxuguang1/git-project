@@ -12,7 +12,8 @@ Page({
     title:"",
     source:"",
     image:"",
-    id:""    
+    id:"",
+    defaultImage:"/images/defaultImage.jpg"    
   },
 
   details(e){
@@ -24,7 +25,7 @@ Page({
 
   navbarTap: function (e) {     
     this.setData({
-       currentTab: e.currentTarget.dataset.idx,      
+       currentTab: e.currentTarget.dataset.idx,  //通过监听点击哪个tap版块获取到索引    
     })  
     this.getNews()
     },
@@ -41,19 +42,15 @@ Page({
       },
       success: function (res) {
         let result = res.data.result        
-        
-       //console.log(result)
         let listnew = []
         for(let i = 0;i<result.length;i++){          
            listnew.push({
               id:result[i].id,
               title:result[i].title,
-              date: result[i].date.substr(11,5),
-              source:result[i].source,
-              image:result[i].firstImage
-            })
-           //console.log(result[i].date.substr(11, 5))
-        
+              date: result[i].date.substr(11, 5),//对日期字段进行截取，由原字段"2018-03-10T00:36:48.000Z" 取其中时间 00:36
+              source: result[i].source || "未知来源",
+              image:result[i].firstImage || defaultImage,
+            })/* 用数组分别保存id、标题、时间、新闻出处、图片路径，id用于传递到详情页面 */
       }
         that.setData ({
             listnews:listnew
